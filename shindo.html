@@ -32,6 +32,7 @@ body {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 L4 18 L8 14 L11 20 L13.5 19 L10.5 13 L16 13 Z' fill='white' stroke='%23c9607a' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;
 }
 
+/* ── NAV ── */
 nav {
   position:fixed; top:0; width:100%; z-index:1000;
   display:flex; justify-content:space-between; align-items:center;
@@ -67,7 +68,7 @@ nav {
 }
 .cart-btn:hover { background:#c9607a; }
 
-
+/* ── HERO ── */
 .hero {
   min-height:100vh;
   display:grid; grid-template-columns:1fr 1fr;
@@ -167,6 +168,7 @@ nav {
   transform:rotate(3deg);
 }
 
+/* ── PROMO BANNER ── */
 .promo-banner {
   background:#c9607a; padding:1.2rem 4rem;
   display:flex; align-items:center; justify-content:space-between;
@@ -206,7 +208,7 @@ nav {
 }
 .promo-code:hover { background:var(--dark); color:white; }
 
-
+/* ── CATEGORIES ── */
 .categories { padding:5rem 4rem; background:var(--white); }
 .section-label {
   font-size:0.58rem; letter-spacing:0.55em; color:var(--green);
@@ -266,7 +268,7 @@ nav {
 .cat-custom .cat-sub { color:rgba(255,255,255,0.5); }
 .cat-custom::after { background:#4a9e7a; }
 
-
+/* ── PRODUCTS ── */
 .products { padding:4rem 4rem; background:var(--off-white); }
 .products-nav {
   display:flex; gap:0; margin-bottom:3rem;
@@ -357,7 +359,7 @@ nav {
 .color-dots { display:flex; gap:4px; }
 .cdot { width:10px; height:10px; border-radius:50%; }
 
-
+/* ── CUSTOM CARD ── */
 .product-card.custom-card { background:var(--dark); border-color:var(--dark); }
 .custom-card .product-name, .custom-card .product-price { color:white; }
 .custom-card .product-desc { color:rgba(255,255,255,0.45); }
@@ -365,10 +367,10 @@ nav {
 .custom-card .quick-add { background:#4a9e7a; }
 .custom-card:hover { border-color:var(--green); }
 
-
+/* ── HIDDEN CLASS ── */
 .product-card.hidden { display:none; }
 
-
+/* ── PROMO SECTION ── */
 .promo-section {
   background:var(--dark); padding:5rem 4rem;
   display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
@@ -415,7 +417,7 @@ nav {
 }
 .promo-stat-lbl { font-size:0.58rem; color:rgba(255,255,255,0.35); letter-spacing:0.2em; }
 
-
+/* ── REVIEWS ── */
 .reviews { padding:5rem 4rem; background:var(--off-white); }
 .reviews-grid {
   display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem;
@@ -443,7 +445,7 @@ nav {
 .review-product { color:var(--pink); }
 .review-verified { font-size:0.55rem; color:var(--green); letter-spacing:0.1em; margin-top:0.2rem; }
 
-
+/* ── MANIFESTO ── */
 .manifesto {
   background:var(--dark); color:white;
   padding:7rem 4rem; text-align:center; position:relative; overflow:hidden;
@@ -474,7 +476,7 @@ nav {
 }
 .manifesto-divider span { font-size:1.2rem; color:var(--pink); }
 
-
+/* ── BECOME ── */
 .become {
   background:#c9607a; padding:6rem 4rem; text-align:center;
   position:relative; overflow:hidden;
@@ -514,7 +516,7 @@ footer {
 .footer-credit { font-size:0.58rem; color:rgba(255,255,255,0.2); letter-spacing:0.1em; }
 .footer-credit span { color:var(--pink); }
 
-
+/* ── MODAL ── */
 .modal-overlay {
   position:fixed; inset:0;
   background:rgba(0,0,0,0.6); z-index:5000;
@@ -626,7 +628,7 @@ footer {
 .custom-submit:hover { background:var(--dark); }
 .custom-price-note { font-size:0.6rem; color:var(--gray); letter-spacing:0.1em; margin-top:0.8rem; text-align:center; }
 
-
+/* ── CART ── */
 .cart-panel {
   position:fixed; right:0; top:0; height:100vh; width:380px;
   background:var(--white); border-left:2px solid var(--dark);
@@ -667,7 +669,7 @@ footer {
 .checkout-btn { width:100%; background:var(--dark); color:white; border:none; padding:1rem; font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.2em; cursor:pointer; transition:background 0.2s; }
 .checkout-btn:hover { background:#4a9e7a; }
 
-
+/* ── TOAST ── */
 .toast {
   position:fixed; bottom:2rem; left:50%;
   transform:translateX(-50%) translateY(100px);
@@ -679,10 +681,10 @@ footer {
 }
 .toast.show { transform:translateX(-50%) translateY(0); }
 
-
+/* ── ANIMATIONS ── */
 @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
-
+/* ── PHOTOS PRODUIT ── */
 .product-photo {
   position:absolute; inset:0;
   width:100%; height:100%; object-fit:cover;
@@ -723,7 +725,40 @@ footer {
 </head>
 <body>
 
-
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║              GUIDE D'INTÉGRATION DES PHOTOS — SHINDO             ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║  Pour ajouter une photo, remplace simplement le src="" vide      ║
+║  par le chemin de ton image dans chaque balise <img>.            ║
+║                                                                  ║
+║  EXEMPLE :                                                        ║
+║    Avant :  src=""                                               ║
+║    Après :  src="images/shindo-origin.jpg"                       ║
+║                                                                  ║
+║  IMAGES PRODUITS (dans la section #products) :                   ║
+║    1. SHINDO ORIGIN    → images/shindo-origin.jpg                ║
+║    2. KANJI FREQUENCY  → images/kanji-frequency.jpg             ║
+║    3. GHOST SIGNAL     → images/ghost-signal.jpg                 ║
+║    4. TOKYO 2077       → images/tokyo-2077.jpg                   ║
+║    5. VIBRATION TEE    → images/vibration-tee.jpg               ║
+║    6. REPEAT SIGNAL    → images/repeat-signal.jpg                ║
+║    7. SUMMER WAVE      → images/summer-wave.jpg                  ║
+║    8. NEON BEACH       → images/neon-beach.jpg                   ║
+║                                                                  ║
+║  IMAGE HERO (grande image à droite du titre) :                   ║
+║    → images/hero-tshirt.jpg   (recommandé : 800×1000px)          ║
+║                                                                  ║
+║  TAILLE RECOMMANDÉE pour les produits : 600×800px minimum        ║
+║  FORMAT recommandé : JPG ou WEBP pour la rapidité               ║
+║                                                                  ║
+║  ASTUCE : Place tous tes fichiers dans un dossier "images/"       ║
+║  au même niveau que ce fichier HTML.                             ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">SH<span class="pk">I</span>NDO</a>
   <span class="nav-kanji">振動</span>
@@ -755,18 +790,26 @@ footer {
       <a href="#custom" class="btn-outline">CRÉER LE MIEN</a>
     </div>
   </div>
+
   <div class="hero-right">
-    <div class="hero-visual">
-    
-      <img src="" alt="SHINDO Hero" class="hero-photo" id="heroPhoto"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="hero-visual" style="width:550px; height:700px;">
+      <!-- PHOTO HERO -->
+      <img src="images/honda.jpg"
+           alt="SHINDO Hero"
+           class="hero-photo"
+           id="heroPhoto"
+           style="object-fit:cover; object-position:center;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+
       <div class="photo-placeholder-fallback" style="display:flex">
         <div class="tshirt-art hero-shirt-art">振動</div>
       </div>
+
       <div class="hero-badge-new">NEW DROP</div>
     </div>
   </div>
 </section>
+
 
 <!-- PROMO BANNER -->
 <div class="promo-banner">
@@ -784,34 +827,110 @@ footer {
   <div class="section-label">Collections</div>
   <h2 class="section-title">CHOISISSEZ<br>VOTRE <span>UNIVERS</span></h2>
   <p class="section-sub">5 catégories // des visuels uniques créés pour chaque fréquence</p>
+
   <div class="cats-grid">
+
+    <!-- ANIME -->
     <div class="cat-card" onclick="filterProducts('anime')">
-      <div class="cat-icon">⛩</div>
-      <div class="cat-name">ANIMÉ</div>
-      <div class="cat-sub">Shōnen · Seinen<br>Esthétique japonaise</div>
+      <img src="images/anime.jpg" class="cat-img" alt="Animé">
+      <div class="cat-overlay-solid">
+        <div class="cat-icon">⛩</div>
+        <div class="cat-name">ANIMÉ</div>
+        <div class="cat-sub">Shōnen · Seinen<br>Esthétique japonaise</div>
+      </div>
     </div>
+
+    <!-- GLITCH -->
     <div class="cat-card" onclick="filterProducts('glitch')">
-      <div class="cat-icon">⚡</div>
-      <div class="cat-name">GLITCH NUMÉRIQUE</div>
-      <div class="cat-sub">Cyberpunk · Synthwave<br>Tokyo de nuit</div>
+      <img src="images/gli.jpg" class="cat-img" alt="Glitch">
+      <div class="cat-overlay-solid">
+        <div class="cat-icon">ִֶָ. ..𓂃 ࣪ ִֶָ🦋་༘࿐</div>
+        <div class="cat-name">GLITCH NUMÉRIQUE</div>
+        <div class="cat-sub">Cyberpunk · Synthwave<br>Tokyo de nuit</div>
+      </div>
     </div>
+
+    <!-- POP CULTURE -->
     <div class="cat-card" onclick="filterProducts('popculture')">
-      <div class="cat-icon">😂</div>
-      <div class="cat-name">POP CULTURE FUNNY</div>
-      <div class="cat-sub">Memes · Références<br>Humour 2.0</div>
+      <img src="images/chicha.jpg" class="cat-img" alt="Pop Culture">
+      <div class="cat-overlay-solid">
+        <div class="cat-icon">ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧</div>
+        <div class="cat-name">POP CULTURE FUNNY</div>
+        <div class="cat-sub">Memes · Références<br>Humour 2.0</div>
+      </div>
     </div>
+
+    <!-- SUMMER -->
     <div class="cat-card" onclick="filterProducts('summer')">
-      <div class="cat-icon">🌊</div>
-      <div class="cat-name">SUMMER FRAÎCHEUR</div>
-      <div class="cat-sub">Couleurs vives · Légèreté<br>Été électrique</div>
+      <img src="images/summer.jpg" class="cat-img" alt="Summer">
+      <div class="cat-overlay-solid">
+        <div class="cat-icon">🪼⋆.ೃ࿔*:･</div>
+        <div class="cat-name">SUMMER FRAÎCHEUR</div>
+        <div class="cat-sub">Couleurs vives · Légèreté<br>Été électrique</div>
+      </div>
     </div>
+
+    <!-- CUSTOM -->
     <div class="cat-card cat-custom" onclick="openCustomModal()">
-      <div class="cat-icon" style="color:var(--green)">✦</div>
-      <div class="cat-name">CARTE BLANCHE</div>
-      <div class="cat-sub">Crée ton T-shirt<br>de A à Z</div>
+      <img src="images/carte.jpg" class="cat-img" alt="Custom">
+      <div class="cat-overlay-solid">
+        <div class="cat-icon" style="color:var(--green)">✦</div>
+        <div class="cat-name">CARTE BLANCHE</div>
+        <div class="cat-sub">Crée ton T-shirt<br>de A à Z</div>
+      </div>
     </div>
+
   </div>
 </section>
+
+<!-- CSS IMAGES NETTES -->
+<style>
+  .cat-card {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid var(--light-gray);
+    transition: all 0.25s;
+  }
+
+  .cat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transition: transform 0.4s ease;
+  }
+
+  .cat-card:hover .cat-img {
+    transform: scale(1.05);
+  }
+
+  /* OVERLAY NET (PAS DE BLUR) */
+  .cat-overlay-solid {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35); /* léger voile pour lisibilité */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cat-card:hover .cat-name,
+  .cat-card:hover .cat-sub,
+  .cat-card:hover .cat-icon {
+    color: white;
+  }
+</style>
+
+
 
 <!-- PRODUCTS -->
 <section class="products" id="products">
@@ -821,9 +940,9 @@ footer {
   <div class="products-nav">
     <button class="pnav-btn active" onclick="filterProducts('all',this)">TOUT VOIR</button>
     <button class="pnav-btn" onclick="filterProducts('anime',this)">⛩ ANIMÉ</button>
-    <button class="pnav-btn" onclick="filterProducts('glitch',this)">⚡ GLITCH NUMÉRIQUE</button>
+    <button class="pnav-btn" onclick="filterProducts('glitch',this)">ִֶָ🦋 GLITCH NUMÉRIQUE</button>
     <button class="pnav-btn" onclick="filterProducts('popculture',this)">😂 POP CULTURE FUNNY</button>
-    <button class="pnav-btn" onclick="filterProducts('summer',this)">🌊 SUMMER FRAÎCHEUR</button>
+    <button class="pnav-btn" onclick="filterProducts('summer',this)">🪼 SUMMER FRAÎCHEUR</button>
     <button class="pnav-btn pnav-custom" onclick="openCustomModal()">✦ CARTE BLANCHE</button>
   </div>
 
@@ -834,7 +953,7 @@ footer {
       <div class="product-img-wrap">
         <span class="product-badge badge-new">NEW</span>
         <!-- PHOTO SHINDO ORIGIN → remplace src par ton image ex: src="images/shindo-origin.jpg" -->
-        <img src="" alt="SHINDO ORIGIN" class="product-photo" onerror="this.style.display='none'">
+        <img src="images/tokyo.jpg" alt="SHINDO ORIGIN" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-1 product-fallback"><div class="tshirt-art tshirt-art-1">SHINDO<br>振動</div></div>
         <button class="quick-add" onclick="event.stopPropagation();openModal('SHINDO ORIGIN',39,'tshirt-1','tshirt-art-1','SHINDO<br>振動')">CHOISIR OPTIONS</button>
       </div>
@@ -848,15 +967,15 @@ footer {
       </div>
     </div>
 
-    <div class="product-card reveal" data-cat="anime" onclick="openModal('KANJI FREQUENCY',42,'tshirt-2','tshirt-art-2','振')">
+    <div class="product-card reveal" data-cat="anime" onclick="openModal('JOLLY FREQUENCY',42,'tshirt-2','tshirt-art-2','振')">
       <div class="product-img-wrap">
-        <!-- PHOTO KANJI FREQUENCY → src="images/kanji-frequency.jpg" -->
-        <img src="" alt="KANJI FREQUENCY" class="product-photo" onerror="this.style.display='none'">
+        <!-- PHOTO KANJI FREQUENCY → src="images/tokyo.jpg" -->
+        <img src="images/jolly.jpg" alt="JOLLY FREQUENCY" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-2 product-fallback"><div class="tshirt-art tshirt-art-2">振</div></div>
-        <button class="quick-add" onclick="event.stopPropagation();openModal('KANJI FREQUENCY',42,'tshirt-2','tshirt-art-2','振')">CHOISIR OPTIONS</button>
+        <button class="quick-add" onclick="event.stopPropagation();openModal('JOLLY FREQUENCY',42,'tshirt-2','tshirt-art-2','振')">CHOISIR OPTIONS</button>
       </div>
       <div class="product-info">
-        <p class="product-name">KANJI FREQUENCY</p>
+        <p class="product-name">JOLLY FREQUENCY</p>
         <p class="product-desc">Animé // Minimaliste // Oversize</p>
         <div class="product-footer">
           <span class="product-price">42 €</span>
@@ -866,28 +985,59 @@ footer {
     </div>
 
     <!-- GLITCH -->
-    <div class="product-card reveal" data-cat="glitch" onclick="openModal('GHOST SIGNAL',39,'tshirt-4','tshirt-art-4','振動<br>FUTURE<br>振動')">
-      <div class="product-img-wrap">
-        <span class="product-badge badge-promo">-15%</span>
-        <!-- PHOTO GHOST SIGNAL → src="images/ghost-signal.jpg" -->
-        <img src="" alt="GHOST SIGNAL" class="product-photo" onerror="this.style.display='none'">
-        <div class="tshirt-placeholder tshirt-4 product-fallback"><div class="tshirt-art tshirt-art-4">振動<br>FUTURE<br>振動</div></div>
-        <button class="quick-add" onclick="event.stopPropagation();openModal('GHOST SIGNAL',39,'tshirt-4','tshirt-art-4','振動<br>FUTURE<br>振動')">CHOISIR OPTIONS</button>
-      </div>
-      <div class="product-info">
-        <p class="product-name">GHOST SIGNAL</p>
-        <p class="product-desc">Glitch // Contour violet // Oversize</p>
-        <div class="product-footer">
-          <span class="product-price"><span class="old-price">46€</span><span class="sale">39 €</span></span>
-          <div class="color-dots"><div class="cdot" style="background:#1a1612"></div><div class="cdot" style="background:#1a1612"></div><div class="cdot" style="background:#c9607a"></div></div>
-        </div>
+<!-- GLITCH -->
+<div class="product-card reveal" data-cat="glitch"
+     onclick="openModal('GHOST SIGNAL', 39, 'tshirt-4', 'tshirt-art-4', '振動<br>FUTURE<br>振動')">
+
+  <div class="product-img-wrap">
+    <span class="product-badge badge-promo">-15%</span>
+
+    <!-- IMAGE PRODUIT -->
+    <img src="images/jesusdesu.jpg"
+         alt="J SIGNAL"
+         class="product-photo"
+         onerror="this.style.display='none'">
+
+    <!-- FALLBACK T-SHIRT -->
+    <div class="tshirt-placeholder tshirt-4 product-fallback">
+      <div class="tshirt-art tshirt-art-4">
+        振動<br>FUTURE<br>振動
       </div>
     </div>
+
+    <button class="quick-add"
+            onclick="event.stopPropagation(); openModal('GHOST SIGNAL', 39, 'tshirt-4', 'tshirt-art-4', '振動<br>FUTURE<br>振動')">
+      CHOISIR OPTIONS
+    </button>
+  </div>
+
+  <div class="product-info">
+    <p class="product-name">GHOST SIGNAL</p>
+    <p class="product-desc">Glitch // Contour violet // Oversize</p>
+
+    <div class="product-footer">
+      <span class="product-price">
+        <span class="old-price">46€</span>
+        <span class="sale">39 €</span>
+      </span>
+
+      <div class="color-dots">
+        <div class="cdot" style="background:#1a1612"></div>
+        <div class="cdot" style="background:#1a1612"></div>
+        <div class="cdot" style="background:#c9607a"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
 
     <div class="product-card reveal" data-cat="glitch" onclick="openModal('TOKYO 2077',44,'tshirt-5','tshirt-art-5','SHINDO<br>TOKYO<br>2077')">
       <div class="product-img-wrap">
         <!-- PHOTO TOKYO 2077 → src="images/tokyo-2077.jpg" -->
-        <img src="" alt="TOKYO 2077" class="product-photo" onerror="this.style.display='none'">
+        <img src="images/tel.jpg" alt="TOKYO 2077" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-5 product-fallback"><div class="tshirt-art tshirt-art-5">SHINDO<br>TOKYO<br>2077<br>DESIGNED<br>BY SAIDA</div></div>
         <button class="quick-add" onclick="event.stopPropagation();openModal('TOKYO 2077',44,'tshirt-5','tshirt-art-5','SHINDO<br>TOKYO<br>2077')">CHOISIR OPTIONS</button>
       </div>
@@ -906,7 +1056,7 @@ footer {
       <div class="product-img-wrap">
         <span class="product-badge badge-ltd">LIMITED</span>
         <!-- PHOTO VIBRATION TEE → src="images/vibration-tee.jpg" -->
-        <img src="" alt="VIBRATION TEE" class="product-photo" onerror="this.style.display='none'">
+        <img src="images/samurai.jpg" alt="VIBRATION TEE" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-3 product-fallback"><div class="tshirt-art tshirt-art-3">BECOME<br>THE<br>VIBRATION</div></div>
         <button class="quick-add" onclick="event.stopPropagation();openModal('VIBRATION TEE',45,'tshirt-3','tshirt-art-3','BECOME<br>THE<br>VIBRATION')">CHOISIR OPTIONS</button>
       </div>
@@ -924,7 +1074,7 @@ footer {
       <div class="product-img-wrap">
         <span class="product-badge badge-soon">SOON</span>
         <!-- PHOTO REPEAT SIGNAL → src="images/repeat-signal.jpg" -->
-        <img src="" alt="REPEAT SIGNAL" class="product-photo" onerror="this.style.display='none'">
+        <img src="images/chichaa.jpg" alt="TOKYO SIGNAL" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-6 product-fallback"><div class="tshirt-art tshirt-art-6">振動<br>振動<br>振動</div></div>
         <button class="quick-add" onclick="event.stopPropagation();openModal('REPEAT SIGNAL',41,'tshirt-6','tshirt-art-6','振動<br>振動<br>振動')">CHOISIR OPTIONS</button>
       </div>
@@ -943,7 +1093,7 @@ footer {
       <div class="product-img-wrap">
         <span class="product-badge badge-new">NEW</span>
         <!-- PHOTO SUMMER WAVE → src="images/summer-wave.jpg" -->
-        <img src="" alt="SUMMER WAVE" class="product-photo" onerror="this.style.display='none'">
+        <img src="images/guavas.jpg" alt="SUMMER WAVE" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-2 product-fallback"><div class="tshirt-art tshirt-art-2" style="color:#4a9e7a">波</div></div>
         <button class="quick-add" onclick="event.stopPropagation();openModal('SUMMER WAVE',38,'tshirt-2','tshirt-art-2','波')">CHOISIR OPTIONS</button>
       </div>
@@ -960,7 +1110,7 @@ footer {
     <div class="product-card reveal" data-cat="summer" onclick="openModal('NEON BEACH',40,'tshirt-3','tshirt-art-3','NEON<br>BEACH<br>SHINDO')">
       <div class="product-img-wrap">
         <!-- PHOTO NEON BEACH → src="images/neon-beach.jpg" -->
-        <img src="" alt="NEON BEACH" class="product-photo" onerror="this.style.display='none'">
+        <img src="images/gangsta.jpg" alt="NEON BEACH" class="product-photo" onerror="this.style.display='none'">
         <div class="tshirt-placeholder tshirt-3 product-fallback"><div class="tshirt-art tshirt-art-3" style="color:#d4622a">NEON<br>BEACH<br>SHINDO</div></div>
         <button class="quick-add" onclick="event.stopPropagation();openModal('NEON BEACH',40,'tshirt-3','tshirt-art-3','NEON<br>BEACH<br>SHINDO')">CHOISIR OPTIONS</button>
       </div>
@@ -1012,7 +1162,7 @@ footer {
     </div>
   </div>
   <div class="promo-right">
-    <div class="promo-stat"><span class="promo-stat-num">2K+</span><span class="promo-stat-lbl">COMMANDES</span></div>
+    <div class="promo-stat"><span class="promo-stat-num">600+</span><span class="promo-stat-lbl">COMMANDES</span></div>
     <div class="promo-stat"><span class="promo-stat-num">4.9★</span><span class="promo-stat-lbl">NOTE MOYENNE</span></div>
     <div class="promo-stat"><span class="promo-stat-num">48H</span><span class="promo-stat-lbl">LIVRAISON</span></div>
     <div class="promo-stat"><span class="promo-stat-num">100%</span><span class="promo-stat-lbl">SATISFAIT</span></div>
@@ -1163,7 +1313,7 @@ footer {
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2024 SHINDO — Tous droits réservés</p>
+    <p class="footer-copy">© 2026 SHINDO — Tous droits réservés</p>
     <p class="footer-credit">Designed by <span>SAIDA</span> — 振動</p>
   </div>
 </footer>
